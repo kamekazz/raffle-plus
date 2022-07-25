@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def loginUser(req):
-    return render(req, 'root/layout/main.html')
+    return render(req, 'users/pages/login.html')
