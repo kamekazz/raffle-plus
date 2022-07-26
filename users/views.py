@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from users.forms import CustomUserCreationForm
+
 # Create your views here.
 
 
@@ -8,7 +10,9 @@ def loginUserPage(req):
 
 
 def registerPage(req):
-    return render(req, 'users/pages/register.html')
+    form = CustomUserCreationForm()
+    context = {'form': form}
+    return render(req, 'users/pages/register.html', context)
 
 
 def profilePage(req):
