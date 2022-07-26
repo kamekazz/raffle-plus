@@ -1,1 +1,166 @@
-<h1>register page</h1>
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 900, 'GRAD' 200, 'opsz' 48;
+        font-size: 10rem;
+        color: #3f51b5;
+      }
+
+      /* body {
+        background: #fff;
+      } */
+
+      .input-field input[type='date']:focus + label,
+      .input-field input[type='text']:focus + label,
+      .input-field input[type='email']:focus + label,
+      .input-field input[type='password']:focus + label {
+        color: #e91e63;
+      }
+
+      .input-field input[type='date']:focus,
+      .input-field input[type='text']:focus,
+      .input-field input[type='email']:focus,
+      .input-field input[type='password']:focus {
+        border-bottom: 2px solid #e91e63;
+        box-shadow: none;
+      }
+      h1 {
+        font-size: 8.2rem;
+        line-height: 110%;
+        margin: 2.1rem 0 1.68rem 0;
+        font-weight: bold;
+        color: white;
+        -webkit-text-stroke: 2px black; /* width and color */
+        /* 1 pixel black shadow to left, top, right and bottom */
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section"></div>
+    <main>
+      <center>
+        <h1>RIFA<span class="material-symbols-outlined"> add </span></h1>
+
+        <h5 class="indigo-text">Crear una Nueva Cuenta</h5>
+        <div class="section"></div>
+
+        <div class="container">
+          <div
+            class="z-depth-1 grey lighten-4 row"
+            style="
+              display: inline-block;
+              padding: 32px 48px 0px 48px;
+              border: 1px solid #eee;
+            "
+          >
+            <form class="col s12" method="post">
+              <div class="row">
+                <div class="col s12"></div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    class="validate"
+                    type="number"
+                    name="email"
+                    id="email"
+                  />
+                  <label for="email">Introduce tu Usuario</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    class="validate"
+                    type="password"
+                    name="password"
+                    id="password"
+                  />
+                  <label for="password">Ingresa tu contraseña</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    class="validate"
+                    type="password"
+                    name="password"
+                    id="password"
+                  />
+                  <label for="password">Ingresa tu contraseña</label>
+                </div>
+                <label style="float: right">
+                  <a class="pink-text" href="#!"
+                    ><b>¿Has olvidado tu contraseña?</b></a
+                  >
+                </label>
+              </div>
+
+              <br />
+              <center>
+                <div class="row">
+                  <button
+                    type="submit"
+                    name="btn_login"
+                    class="col s12 btn btn-large waves-effect indigo"
+                  >
+                    Registrarse
+                  </button>
+                </div>
+              </center>
+            </form>
+          </div>
+        </div>
+        <a href="{% url 'login' %}">iniciar sesión a su cuenta</a>
+      </center>
+
+      <div class="section"></div>
+      <div class="section"></div>
+    </main>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"
+    ></script>
+  </body>
+</html>
