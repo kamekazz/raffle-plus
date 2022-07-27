@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate, logout
 from users.forms import CustomUserCreationForm
-
+from django.contrib import messages
 # Create your views here.
 
 
@@ -18,12 +18,12 @@ def registerPage(req):
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
-            print('User account was created')
+            messages.success(req, 'User account was created!')
             login(req, user)
             return redirect('profile')
 
         else:
-            print('an error has ocurred during registration')
+            messages.error(req, 'An error has occurred during registration')
 
     context = {'form': form}
     return render(req, 'users/pages/register.html', context)
